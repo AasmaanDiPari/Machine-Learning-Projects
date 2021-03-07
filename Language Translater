@@ -1,0 +1,10 @@
+from textblob import TextBlob
+text = TextBlob("Hay Harwinder how dou you do mwrning.")
+text2 = TextBlob("कैसे गुज़्रे तुम्हारे दिन मेरे बिना? क्या खुश तो थे ही ना तुम?क्या कभी भी मेरा हाल तक् जानना ज़्रूरी नही समझा तुम ने?"
+                 " मैंने अब् सब कुछ किस्मत पर ही छोद्द दिआ है ?दर्द के साथ जी चुकी हूँ मैं,तेरे बिना! पर आज भी मैं खामोस ही हूँ?"
+                 " मैं तो आज भी तेरि खमोशी को सुनती हूँ? शाय्द मेरी खमोशी को तुम कभि भी ना समझ सको!")
+print(text.correct())
+print(text.translate(from_lang='en',to='hi'))
+print(text2.translate(from_lang='hi',to='en'))
+print(text.detect_language())
+print(text2.detect_language())
