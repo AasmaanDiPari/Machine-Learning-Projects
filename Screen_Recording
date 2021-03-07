@@ -1,0 +1,19 @@
+import numpy as np
+import cv2
+from PIL import ImageGrab
+fourcc = cv2.VideoWriter_fourcc(*'XVID')
+out = cv2.VideoWriter('test.mp4v', fourcc, 60, (320, 240))
+while True:
+    img = ImageGrab.grab()
+    frame = np.array(img)
+    #frame = cv2.cvtColor(imgArray)
+    cv2.imshow('captured',frame)
+    out.write(frame)
+    cv2.waitKey(0)
+    if(cv2.waitKey()==27):
+        break
+out.release()
+cv2.destroyAllWindows()
+
+
+
