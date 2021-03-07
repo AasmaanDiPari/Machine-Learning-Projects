@@ -1,0 +1,44 @@
+# Vigenere Method
+import numpy as np
+PT = []
+n = int(input("enter the no of elements in plain text"))
+for i in range(n):
+    x = input("enter the character:")
+    PT.append(x)
+print(PT)
+k = []
+for i in PT:
+    b = ord(i)
+    k.append(b)
+print("AsciiEqvlPt", k)
+print(len(PT))
+KEY = []
+n = int(input("enter the no of elements in key text"))
+for i in range(n):
+    x = input("enter the character:")
+    KEY.append(x)
+print(KEY)
+print(len(KEY))
+for index in range(len(KEY)):
+    while len(KEY) != len(PT):
+        KEY.append(KEY[index])
+        index = index+1
+print(KEY)
+d=[]
+for i in KEY:
+    c = ord(i)
+    d.append(c)
+print("AsciiEuiPt", d)
+CT=[]
+for i in range(len(k)):
+   g=(k[i]+d[i])%26
+   CT.append(g)
+print("CT = ",CT)
+
+
+
+
+
+
+
+
