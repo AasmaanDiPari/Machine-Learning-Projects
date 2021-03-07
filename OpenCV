@@ -1,0 +1,46 @@
+import cv2,time
+'''img1 = cv2.imread("C:\\Users\\bs\\Pictures\\Gallery\\Screenshot (208).png",1)
+img2 = cv2.imread("C:\\Users\\bs\\Pictures\\Gallery\\Screenshot (208).png",0)
+print(img1)
+print(img2)
+print(type(img1))
+print(type(img2))
+print(img1.shape)
+print(img2.shape)
+cv2.imshow("Umeed",img1)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+resized = cv2.resize(img1,(int(img1.shape[1]/2),int(img1.shape[0]/2)))
+resized2 =cv2.resize(img2,(400,600))
+cv2.imshow("Umeed",resized2)
+cv2.waitKey(0)
+cv2.destroyAllWindows()'''
+face_cascade = cv2.CascadeClassifier("C:\\Users\\bs\\Documents\\haar-cascade-files-master"
+                                     "\\haar-cascade-files-master\\haarcascade_frontalface_default.xml")
+
+img2 = cv2.imread("C:\\Users\\bs\\Pictures\\Gallery\\Screenshot (208).png")
+#gray=cv2.cvtColor(img2, cv2.COLOR_BAYER_BG2BGR)
+'''faces = face_cascade.detectMultiScale(img2,scaleFactor=1.05,minNeighbors=5)
+print(type(faces))
+print(faces)
+for(x,y,w,h) in faces:
+    img2 = cv2.rectangle(img2,(x,y),(x+w,y+h),(255,0,255),3)
+cv2.imshow('img',img2)
+cv2.waitKey(0)
+cv2.destroyAllWindows()'''
+video = cv2.VideoCapture(0,cv2.CAP_DSHOW)
+a=1
+while True:
+    a=a+1
+    check,frame = video.read()
+    print(check)
+    print(frame)
+    #time.sleep(1)
+    cv2.imshow('capturing',frame)
+    key=cv2.waitKey(1)
+    if key == ord('q'):
+         break
+print(a)
+video.release()
+cv2.destroyAllWindows()
+
