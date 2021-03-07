@@ -1,0 +1,11 @@
+import speech_recognition as sr
+import PyAudio
+while True:
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Say something")
+        audio = r.listen(source)
+        try:
+            print("text:"+r.recognize_google(audio))
+        except sr.UnknownValueError:
+            print("ਮੈਨੂੰ  ਸਮਝ ਨੀ ਲਗੀ ਤੇਰੀ !")
