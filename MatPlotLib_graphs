@@ -1,0 +1,25 @@
+from matplotlib import pyplot as plt
+from matplotlib import style
+style.use('ggplot')
+x = []
+y = []
+n = int(input("enter no. of elements in 1st data set:"))
+for item in range(n):
+    a = int(input("enter the element:"))
+    x.append(a)
+m = int(input("enter no. of elements in 2nd data set:"))
+for item in range(m):
+    b = int(input("enter the element:"))
+    y.append(b)
+plt.plot(x, y, 'r', label='one line', linewidth=3)
+plt.title("My graph")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.legend()
+plt.grid(True, color='b')
+plt.show()
+plt.bar(x, y, label='BarGraph')
+plt.show()
+plt.hist([3, 6, 9, 5, 6, 10], [0, 2, 4, 6, 8, 10, 12, 14, 16], histtype='bar', rwidth=1)
+plt.show()
+
