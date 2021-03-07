@@ -1,0 +1,19 @@
+a = input("enter the plain text:")
+for i in a:
+    b = (format(ord(i), 'b'))
+print(b)
+c = input("Enter the cipher text:")
+for i in c:
+    d = (format(ord(i), 'b'))
+print(d)
+e= b^d
+print(e)
+g= bin(e)
+print("g= ", g)
+
+
+def xor_two_str(str1, str2):
+    return bin(int(str1, 2) ^ int(str2, 2))
+
+
+print(xor_two_str(b, d))
