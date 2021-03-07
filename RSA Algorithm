@@ -1,0 +1,32 @@
+# RSA ALGORITHM.
+a = int(input("Enter 1st arbitrary Prime no.:"))
+while a % 2 == 0:                        # If user enters even no. then to correct reenter the prime no.
+    a = int(input("Enter 1st arbitrary Prime no.:"))
+b = int(input("Enter the 2nd arbitrary Prime no:"))
+while b % 2 == 0:                        # If user enters even no. then to correct reenter the prime no.
+    b = int(input("Enter the 2nd arbitrary Prime no:"))
+n = a*b
+print("n is:", n)
+v = (a-1)*(b-1)
+print("v is:", v)
+E = []
+K = []
+for i in range(1, v):
+    if (v % i) != 0:
+        E.append(i)
+print([E])                                   # Prints all Possible Encryption Keys.
+e = min(E)                                   # e denotes the Encryption key.
+print("Public Key for Encryption:", e)
+for d in range(1000):                        # Range can be varied as per requirement.
+    if (d*e) % v == 1:
+        K.append(d)
+print([K])                                   # Prints all Possible Decryption keys.
+D = min(K)                                   # Select the minimum one from possible decryption keys.
+print("Public Key for Decryption:", D)
+PT = int(input("Enter plain text:"))
+CT = (PT**e) % n                             # Calculates cipher text acc. to RSA algorithm.
+print("Corresponding Cipher Text is:", CT)
+# finding PT from the Cipher text:
+CT = int(input("Enter the Cipher text:"))
+PT = (CT**D) % n                              # Calculates Plain text acc. to RSA algorithm.
+print("Corresponding Plain text is:", PT)
