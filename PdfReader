@@ -1,0 +1,7 @@
+import PyPDF2
+pdfFileObj = open("C:\\Users\\bs\\Documents\\21701019.pdf","rb")
+pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+print(pdfReader.numPages)
+page0 = pdfReader.getPage(0)
+print(page0.extractText())
+pdfFileObj.close()
