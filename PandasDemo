@@ -1,0 +1,29 @@
+import pandas as pd
+from matplotlib import pyplot as plt
+import xlrd
+
+
+def convert_name_cell(gdrgr):
+    if gdrgr == "Masonry":
+        return'harry'
+    return gdrgr
+
+
+def convert_name_cell(cell):
+    if cell == "Dulce":
+        return'harry'
+    return cell
+
+
+df1 = pd.read_csv("C:\\Users\\bs\\Documents\\FL_insurance_sample.csv",
+                 names=["segfh", "gdrgr", "dsdf", "fdsf", "gsdfs", "vddsv", "dhggh", "fbcv", "tfbc", "grffb", "fbfbf", "fbfbfb", "bfbk", "bfb", "grr", "gfeed", "fvf"], dtype=str, nrows=4, na_values={
+    'gfeed':["Masonry"]}, converters={'gdrgr': convert_name_cell})
+print(df1)
+df2 = pd.read_excel("C:\\Users\\bs\\Documents\\xl_sample.xls", converters={'First Name': convert_name_cell})
+print(df2)
+x = df2['Age']
+y = df2['Gender']
+plt.xlabel("Age")
+plt.ylabel("Gender")
+plt.scatter(x, y)
+plt.show()
