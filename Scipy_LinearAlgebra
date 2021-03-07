@@ -1,0 +1,23 @@
+import numpy as np
+from scipy import linalg
+from scipy.fftpack import fft,ifft
+from scipy import special
+a=np.array([[1,2],[3,4]])
+b=linalg.inv(a)
+print(b)
+# fourier Transform
+x=np.array([1,2,3,4])
+y=ifft(x)
+z=fft(x)
+print("y=",y)
+print("z",z)
+'''Special'''
+a=special.exp10(2)
+print(a)
+d=special.exp2(3)
+print(d)
+v=special.cosdg(90)
+print(v)
+
+
+
