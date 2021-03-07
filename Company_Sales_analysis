@@ -1,0 +1,14 @@
+from matplotlib import pyplot as plt
+import pandas as pd
+dataFrame = pd.read_csv("C:\\Users\\bs\\Documents\\company_sales_data.csv")
+print(dataFrame.describe())
+x = dataFrame.month_number
+y = dataFrame.facecream
+z = dataFrame.facewash
+plt.bar([a-0.25 for a in x],y,color='g',label='facecream sales',align='edge',width=0.25)
+plt.bar([a+0.25 for a in x],z,color='b',label='facewash sales',align='edge',width=-0.25)
+plt.title('facewash & facecream sales')
+plt.xlabel('months')
+plt.ylabel(' number of sales units')
+plt.savefig("C:\\Users\\bs\\Documents\\soap_data.png",dpi=150)
+plt.show()
